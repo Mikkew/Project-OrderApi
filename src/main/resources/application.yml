@@ -1,0 +1,30 @@
+server:
+  port: 8089
+  servlet:
+    context-path: /api/v1
+spring:
+  main:
+    banner-mode: 'off'
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: mysql
+    url: jdbc:mysql://172.17.0.2:3306/db_springboot_backend?useSSL=false&useTimezone=true&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: root
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    defer-datasource-initialization: true
+    
+  sql:
+    init:
+      mode: always
+
+  data:
+    web:
+      pageable:
+        default-page-size: 10
+
