@@ -23,7 +23,8 @@ public class ProductServiceImpl implements IProductService {
 	@Autowired
 	public ProductRepository productRepository;
 	
-	private ProductConverter converter = new ProductConverter();
+	@Autowired
+	private ProductConverter converter;
 
 	@Override
 	public Page<Product> findAll(Specification<Product> spec, Pageable pageable) {

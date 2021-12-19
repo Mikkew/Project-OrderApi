@@ -23,7 +23,8 @@ public class OrderServiceImpl implements IOrderService {
 	@Autowired
 	private OrderRepository orderRepository;
 	
-	private OrderConverter converter = new OrderConverter();
+	@Autowired
+	private OrderConverter converter;
 
 	@Override
 	public Page<Order> getAllOrders(Specification<Order> spec, Pageable pageable) {

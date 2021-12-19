@@ -53,7 +53,6 @@ public class OrderLineConverter extends AbstractConverter<OrderLine, OrderLineDT
 				.build();
 	}
 
-	@Override
 	public OrderLineDTO toDto(OrderLineDTO dto) {
 		if(dto == null) 
 			return null;
@@ -69,7 +68,6 @@ public class OrderLineConverter extends AbstractConverter<OrderLine, OrderLineDT
 				.build();
 	}
 
-	@Override
 	public OrderLine toEntity(OrderLine entity) {
 		if(entity == null) 
 			return null;		

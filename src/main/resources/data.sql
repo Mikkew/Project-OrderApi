@@ -41,6 +41,9 @@ INSERT INTO ORDER_LINES(id,order_id, product_id, price,quantity,total,created_at
 INSERT INTO ORDER_LINES(id,order_id, product_id, price,quantity,total,created_at,updated_at) VALUES (UUID(),(SELECT order_id FROM ORDERS ORDER BY RAND() LIMIT 1),(SELECT product_id FROM PRODUCTS ORDER BY RAND() LIMIT 1),90,900,9000,SYSDATE(), SYSDATE());
 INSERT INTO ORDER_LINES(id,order_id, product_id, price,quantity,total,created_at,updated_at) VALUES (UUID(),(SELECT order_id FROM ORDERS ORDER BY RAND() LIMIT 1),(SELECT product_id FROM PRODUCTS ORDER BY RAND() LIMIT 1),100,1000,10000,SYSDATE(), SYSDATE());
 
+INSERT INTO ROLES(role_id,name,created_at,updated_at) VALUES(UUID(),"ADMIN",SYSDATE(), SYSDATE());
+INSERT INTO ROLES(role_id,name,created_at,updated_at) VALUES(UUID(),"USER",SYSDATE(), SYSDATE());
 
+INSERT INTO USERS(user_id,first_name,last_name,username,email,password,created_at,updated_at) VALUES(UUID(),"Juan","Molina","Mikkelios","mikkew@gmail.com","$2a$10$nXsXJCZ0S1nHCPMotiM83eHpwOh3R5ckb7/eQwLKdSq413OzSsVFC",SYSDATE(), SYSDATE());
 
-
+INSERT INTO ROLE_USERS(user_id, role_id) VALUES((SELECT user_id FROM USERS ORDER BY RAND() LIMIT 1),(SELECT role_id FROM ROLES ORDER BY RAND() LIMIT 1));

@@ -32,7 +32,17 @@ public class ErrorHandler extends ResponseEntityExceptionHandler {
 				request.getContextPath(), errors);
 		return response.createResponse(status);
 	}
-
+	
+	@ExceptionHandler(BadRequestException.class)
+	public ResponseEntity<Object> badRequestException(ResourceNotFoundException ex, HttpServletRequest request) {
+		WrapperErrorResponse<String> response = new WrapperErrorResponse<>(
+				HttpStatus.BAD_REQUEST.value(), 
+				LocalDateTime.now(), 
+				request.getRequestURI(),
+				ex.getMessage());
+		return response.createResponse(HttpStatus.BAD_REQUEST);
+	}
+	
 	@ExceptionHandler(ResourceNotFoundException.class)
 	public ResponseEntity<Object> resourceNotFoundException(ResourceNotFoundException ex, HttpServletRequest request) {
 		WrapperErrorResponse<String> response = new WrapperErrorResponse<>(

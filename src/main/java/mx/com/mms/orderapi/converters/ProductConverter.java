@@ -31,7 +31,6 @@ public class ProductConverter extends AbstractConverter<Product, ProductDTO> {
 				.build();
 	}
 
-	@Override
 	public ProductDTO toDto(ProductDTO dto) {
 		if(dto == null) 
 			return null;
@@ -44,7 +43,6 @@ public class ProductConverter extends AbstractConverter<Product, ProductDTO> {
 				.build();
 	}
 
-	@Override
 	public Product toEntity(Product entity) {
 		if(entity == null) 
 			return null;
