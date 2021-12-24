@@ -24,7 +24,7 @@ public class MonitoringController {
                         .getHandlerMethods()
                         .keySet()
                         .stream()
-                        .map(RequestMappingInfo::getName)
+                        .map( RequestMappingInfo::toString )
                         .toList(),
                 HttpStatus.OK
         );

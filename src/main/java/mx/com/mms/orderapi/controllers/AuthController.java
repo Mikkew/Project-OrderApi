@@ -46,7 +46,7 @@ public class AuthController {
 	@Autowired
 	private RoleConverter roleConverter;
 	
-	@GetMapping(value = "/users", produces = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(value = "/users", produces = MediaType.APPLICATION_JSON_VALUE, name = "GET USERS")
 	public ResponseEntity<Object> getUser() {
 		return ResponseEntity.ok(userConverter.fromEntity(authService.getUsers()));
 	}

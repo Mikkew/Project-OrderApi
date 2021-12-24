@@ -30,13 +30,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		
 //		http.cors();
 		http.csrf().disable();
-		http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-		http.authorizeRequests().antMatchers("/auth/**").permitAll();  
-		http.authorizeRequests().antMatchers(HttpMethod.GET, "/auth/users/**").hasAnyAuthority("ROLE_USER");
-	    http.authorizeRequests().antMatchers(HttpMethod.GET, "/auth/users/**").hasAnyAuthority("ROLE_ADMIN");
-		http.authorizeRequests().anyRequest().authenticated();
-		http.addFilter(customAuthenticationFilter);
-	    http.addFilterBefore(new CustomAuthorizationFilter(), UsernamePasswordAuthenticationFilter.class);
+//		http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+//		http.authorizeRequests().antMatchers("/auth/**").permitAll(); 
+//		http.authorizeRequests().antMatchers(HttpMethod.GET, "/auth/users/**").hasAnyAuthority("ROLE_USER");
+//	    http.authorizeRequests().antMatchers(HttpMethod.GET, "/auth/users/**").hasAnyAuthority("ROLE_ADMIN");
+//		http.authorizeRequests().anyRequest().authenticated();
+//		http.addFilter(customAuthenticationFilter);
+//	    http.addFilterBefore(new CustomAuthorizationFilter(), UsernamePasswordAuthenticationFilter.class);
 	}
 
 }
